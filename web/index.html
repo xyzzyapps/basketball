@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Stick Figure Basketball</title>
+  <meta name="description" content="Stick Figure SDF Basketball - Line art physics shooting game." />
+  <meta name="theme-color" content="#000000" />
+
+  <!--
+    Hosted at https://xyzzyapps.github.io/basketball/
+    X reads these tags and, on desktop, loads the page in the timeline as a Player Card.
+    The domain must pass X's Player Card validator before the inline player appears.
+    Do not add X-Frame-Options or a CSP frame-ancestors rule that blocks x.com.
+  -->
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:title" content="Stick Figure Basketball" />
+  <meta name="twitter:description" content="Stick Figure SDF Basketball - Aim and hold left-click to charge your shot." />
+  <meta name="twitter:image" content="https://xyzzyapps.github.io/basketball/icons/Icon-512.png" />
+  <meta name="twitter:image:alt" content="Stick figure shooting a basketball into a hoop." />
+  <meta name="twitter:player" content="https://xyzzyapps.github.io/basketball/" />
+  <meta name="twitter:player:width" content="640" />
+  <meta name="twitter:player:height" content="360" />
+
+  <meta property="og:title" content="Stick Figure Basketball" />
+  <meta property="og:description" content="Stick Figure SDF Basketball - Aim and hold left-click to charge your shot." />
+  <meta property="og:image" content="https://xyzzyapps.github.io/basketball/icons/Icon-512.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="628" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xyzzyapps.github.io/basketball/" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="basketball">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      position: fixed;
+      inset: 0;
+      background: #000000;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior: none;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    flutter-view {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+    }
+  </style>
+
+  <script>
+    // Disable default browser context menu
+    window.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+  </script>
+</head>
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
