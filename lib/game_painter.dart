@@ -161,6 +161,7 @@ class GamePainter extends CustomPainter {
     }
 
     // 5. RENDER FLOATING SCORE TEXTS (Crisp High-Contrast White)
+    final fontScale = (size.width / 640.0).clamp(0.65, 1.3);
     for (final ft in floatingTexts) {
       final alpha = (ft.life / ft.maxLife).clamp(0.0, 1.0);
       final screenPos = worldToScreen(ft.pos, size);
@@ -169,9 +170,9 @@ class GamePainter extends CustomPainter {
         text: ft.text,
         style: TextStyle(
           color: ft.color.withValues(alpha: alpha),
-          fontSize: 26,
+          fontSize: 24 * fontScale,
           fontWeight: FontWeight.w900,
-          letterSpacing: 2.0,
+          letterSpacing: 2.0 * fontScale,
           shadows: [
             Shadow(
               blurRadius: 6.0,
@@ -200,11 +201,13 @@ class GamePainter extends CustomPainter {
 
   // Draw the Left-Click Shot Power Meter and Up-Bob Boost badge
   void _paintPowerMeter(Canvas canvas, Size size) {
+    final scale = size.width / 16.0;
+    final meterScale = (scale / 40.0).clamp(0.65, 1.15);
     final playerScreen = worldToScreen(player.position, size);
-    final meterLeft = playerScreen.dx - 45.0;
-    final meterBottom = playerScreen.dy - 10.0;
-    const meterWidth = 14.0;
-    const meterHeight = 90.0;
+    final meterWidth = 14.0 * meterScale;
+    final meterHeight = 85.0 * meterScale;
+    final meterLeft = math.max(6.0, playerScreen.dx - meterWidth - 28.0 * meterScale);
+    final meterBottom = playerScreen.dy - 6.0;
     final meterRect = Rect.fromLTWH(meterLeft, meterBottom - meterHeight, meterWidth, meterHeight);
 
     // Dark backdrop with white border outline
